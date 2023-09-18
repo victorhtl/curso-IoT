@@ -26,7 +26,7 @@ void loop() {
     Serial.println("A leitura falhou...");
   }
 
-  Serial.print("Humidade: ");
+  Serial.print("Umidade: ");
   Serial.print(h);
   Serial.print("% Temperaruta: ");
   Serial.print(t);
