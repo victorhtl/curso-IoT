@@ -17,6 +17,13 @@ const String writeApiKey = "GJLFHOAAM5AP47W4";    // COLOCAR A SUA KEY
 float umidade = 0;
 float temperatura = 0;
 
+/* Esta função confirma se o servidor vai retornar
+   alguma resposta, que serve para identificar se 
+   a comunicação foi bem sucedida
+   
+   Se a resposta não vier em 5 segundos, 
+   ocorre um timeout e a conexão é encerrada
+*/
 void readResponse(WiFiClient *client){
   unsigned long timeout = millis();
   while(client->available() == 0){
@@ -27,7 +34,7 @@ void readResponse(WiFiClient *client){
     }
   }
 
-  // Read all the lines of the reply from server and print them to Serial
+  // Se a resposta vier ela é enviada no canal serial
   while(client->available()) {
     String line = client->readStringUntil('\r');
     Serial.print(line);
