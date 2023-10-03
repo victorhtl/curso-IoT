@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JavaScript</title>
+</head>
+<body>
+
+    <!-- Elementos -->
+    <h1 id="elementoH1" onmouseover="alteraCor()">
+        Titulo
+    </h1>
+    
+    <p id="elementoP" style="background-color: blue;" onclick="eventoP()">
+        Alguma coisa
+    </p>
+
+    <p>
+        <button onclick="clicou()">Clique em mim</button>
+    </p>
+
+    <p>
+        <input id="inputRange" type="range" min="0" max="255" onchange="mostraValor()">
+    </p>
+
+    <script>
+        const p = document.getElementById("elementoP")
+        const h1 = document.getElementById("elementoH1")
+
+        function eventoP(){
+            p.style.background = "yellow"
+            p.style.fontFamily = "Arial"
+            p.style.fontSize = "30px"
+            p.innerHTML = "Outra coisa"
+        }
+
+        function alteraCor(){
+            h1.style.color = "red"
+        }
+
+        function clicou(){
+            console.log("clicou")
+        }
+
+        function mostraValor(){
+            const range = document.getElementById("inputRange")
+            var valor = range.value
+            p.innerHTML = valor
+        }
+    </script>
+</body>
+</html>

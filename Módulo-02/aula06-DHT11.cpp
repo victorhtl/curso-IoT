@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#include "DHT.h"
+#include "DHT.h" //hwspeedy/DHT-Sensor@^1.4.3
 
 #define DHTPIN 4
 
@@ -28,7 +28,7 @@ void loop() {
 
   Serial.print("Umidade: ");
   Serial.print(h);
-  Serial.print("% Temperaruta: ");
+  Serial.print("% Temperatura: ");
   Serial.print(t);
   Serial.println("°C");
 }
